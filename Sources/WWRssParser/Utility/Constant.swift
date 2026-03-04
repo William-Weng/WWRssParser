@@ -2,7 +2,7 @@
 //  Constant.swift
 //  WWRssParser
 //
-//  Created by iOS on 2026/3/4.
+//  Created by William.Weng on 2026/3/4.
 //
 
 import Foundation
@@ -25,11 +25,16 @@ extension WWRssParser {
     enum ElementNameType: String, CaseIterable {
         
         case item
+        case entry
         case title
         case link
         case description
         case pubDate
+        case updated
         case guid
+        case id
+        case summary
+        case content
         case encoded = "content:encoded"
     }
 }

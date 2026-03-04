@@ -20,6 +20,7 @@ open class WWRssParser: NSObject {
         public let title: String
         public let link: String
         public let guid: String
+        public let summary: String
         public let description: String
         public let pubDate: String
         public let encoded: String
@@ -28,6 +29,7 @@ open class WWRssParser: NSObject {
             case title
             case guid
             case link
+            case summary
             case description
             case pubDate
             case encoded
@@ -39,6 +41,7 @@ open class WWRssParser: NSObject {
         var title: String = .init()
         var link: String = .init()
         var guid: String = .init()
+        var summary: String = .init()
         var description: String = .init()
         var pubDate: String = .init()
         var encoded: String = .init()

@@ -1,14 +1,18 @@
 //
-//  File.swift
+//  RssParser.swift
 //  WWRssParser
 //
-//  Created by iOS on 2026/3/4.
+//  Created by William.Weng on 2026/3/4.
 //
 
 import Foundation
 
+// MARK: - RssParser
 extension WWRssParser.RssParser {
-        
+    
+    /// 解析RSS資訊
+    /// - Parameter data: Data
+    /// - Returns: WWRssParser.RssItem
     func parse(data: Data) -> [WWRssParser.RssItem] {
                 
         let parser = XMLParser(data: data)
@@ -64,12 +68,13 @@ private extension WWRssParser.RssParser {
         guard let elementNameType = WWRssParser.ElementNameType(rawValue: elementName) else { return }
         
         switch elementNameType {
-        case .item: items.append(currentItem)
+        case .item, .entry: items.append(currentItem)
         case .title: currentItem.title = foundCharacters
         case .link: currentItem.link = foundCharacters
-        case .description: currentItem.description = foundCharacters
-        case .pubDate: currentItem.pubDate = foundCharacters
-        case .guid: currentItem.guid = foundCharacters
+        case .description, .content: currentItem.description = foundCharacters
+        case .summary: currentItem.description = foundCharacters
+        case .pubDate, .updated: currentItem.pubDate = foundCharacters
+        case .guid, .id: currentItem.guid = foundCharacters
         case .encoded: currentItem.encoded = foundCharacters
         }
         

@@ -1,26 +1,10 @@
-# WWRssParser
-[![Swift-5.7](https://img.shields.io/badge/Swift-5.7-orange.svg?style=flat)](https://developer.apple.com/swift/) [![iOS-15.0](https://img.shields.io/badge/iOS-15.0-pink.svg?style=flat)](https://developer.apple.com/swift/) ![TAG](https://img.shields.io/github/v/tag/William-Weng/WWRssParser) [![Swift Package Manager-SUCCESS](https://img.shields.io/badge/Swift_Package_Manager-SUCCESS-blue.svg?style=flat)](https://developer.apple.com/swift/) [![LICENSE](https://img.shields.io/badge/LICENSE-MIT-yellow.svg?style=flat)](https://developer.apple.com/swift/)
+//
+//  ViewController.swift
+//  Example
+//
+//  Created by William.Weng on 2026/3/4.
+//
 
-### [Introduction - 簡介](https://swiftpackageindex.com/William-Weng)
-- [A lightweight, pure Swift RSS/Atom parser designed specifically for iOS development.](https://validator.w3.org/feed/docs/rss2.html)
-- [是一個輕量級、純 Swift 寫的 RSS/Atom 解析器，專為 iOS 開發設計。](https://blog.gslin.org/archives/2022/07/02/10772/自己刻-rss-2-0-的簡單方式/)
-
-### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
-```bash
-dependencies: [
-    .package(url: "https://github.com/William-Weng/WWRssParser.git", .upToNextMajor(from: "1.0.0"))
-]
-```
-
-### 可用函式 (Function)
-|函式|功能|
-|-|-|
-|fetch(url:)|抓取RSS資料|
-|parse(data:)|解析RSS資料|
-|parse(url:)|解析線上RSS資料|
-
-### Example
-```swift
 import UIKit
 import WWRssParser
 
@@ -41,6 +25,7 @@ final class ViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,8 +34,10 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - 小工具
 private extension ViewController {
     
+    /// 讀取線上的RSS文件
     func reloadData(url: String) {
         
         Task {
@@ -66,6 +53,8 @@ private extension ViewController {
         }
     }
     
+    /// 建立DataSource
+    /// - Returns: UITableViewDiffableDataSource<Int, WWRssParser.RssItem>
     func dataSourceMaker() -> UITableViewDiffableDataSource<Int, WWRssParser.RssItem> {
         
         let source = UITableViewDiffableDataSource<Int, WWRssParser.RssItem>(tableView: tableView) { tableView, indexPath, rss in
@@ -81,6 +70,8 @@ private extension ViewController {
         return source
     }
     
+    /// 畫面更新 => 資料快照
+    /// - Parameter animatingDifferences: Bool
     func applySnapshot(animatingDifferences: Bool = true) {
         
         let section: Int = 0
@@ -91,4 +82,4 @@ private extension ViewController {
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
-```
+

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		811E2A792F57C31F00C7E67A /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 811E2A782F57C31F00C7E67A /* WWRssParser */; };
 		811E2A902F57D42700C7E67A /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 811E2A8F2F57D42700C7E67A /* WWRssParser */; };
+		811E2A932F57D64000C7E67A /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 811E2A922F57D64000C7E67A /* WWRssParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			files = (
 				811E2A902F57D42700C7E67A /* WWRssParser in Frameworks */,
 				811E2A792F57C31F00C7E67A /* WWRssParser in Frameworks */,
+				811E2A932F57D64000C7E67A /* WWRssParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +89,7 @@
 			packageProductDependencies = (
 				811E2A782F57C31F00C7E67A /* WWRssParser */,
 				811E2A8F2F57D42700C7E67A /* WWRssParser */,
+				811E2A922F57D64000C7E67A /* WWRssParser */,
 			);
 			productName = Example;
 			productReference = 817EE1FE2EB1FA050036B57C /* Example.app */;
@@ -117,7 +120,7 @@
 			mainGroup = 817EE1F52EB1FA050036B57C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				811E2A8E2F57D42700C7E67A /* XCLocalSwiftPackageReference "../../@WWRssParser" */,
+				811E2A912F57D64000C7E67A /* XCRemoteSwiftPackageReference "WWRssParser" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 817EE1FF2EB1FA050036B57C /* Products */;
@@ -360,12 +363,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		811E2A8E2F57D42700C7E67A /* XCLocalSwiftPackageReference "../../@WWRssParser" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../@WWRssParser";
+/* Begin XCRemoteSwiftPackageReference section */
+		811E2A912F57D64000C7E67A /* XCRemoteSwiftPackageReference "WWRssParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/William-Weng/WWRssParser";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		811E2A782F57C31F00C7E67A /* WWRssParser */ = {
@@ -374,6 +381,11 @@
 		};
 		811E2A8F2F57D42700C7E67A /* WWRssParser */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = WWRssParser;
+		};
+		811E2A922F57D64000C7E67A /* WWRssParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 811E2A912F57D64000C7E67A /* XCRemoteSwiftPackageReference "WWRssParser" */;
 			productName = WWRssParser;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -5,6 +5,8 @@
 - [A lightweight, pure Swift RSS/Atom parser designed specifically for iOS development.](https://validator.w3.org/feed/docs/rss2.html)
 - [是一個輕量級、純 Swift 寫的 RSS/Atom 解析器，專為 iOS 開發設計。](https://blog.gslin.org/archives/2022/07/02/10772/自己刻-rss-2-0-的簡單方式/)
 
+https://github.com/user-attachments/assets/9e5e8182-51e6-4a32-b401-bf1e1a5fc376
+
 ### [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 ```bash
 dependencies: [

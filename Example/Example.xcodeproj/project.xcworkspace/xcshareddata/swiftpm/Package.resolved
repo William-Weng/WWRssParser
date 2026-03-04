@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWRssParser",
       "state" : {
-        "revision" : "1e9928583574fc1cb4b255eaa43a4346a8cdf5fc",
-        "version" : "1.0.2"
+        "revision" : "0a99b3d1deeb76f1b0492c27757837c27eddb4a5",
+        "version" : "1.0.3"
       }
     }
   ],

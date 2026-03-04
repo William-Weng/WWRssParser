@@ -16,6 +16,25 @@ public extension WWRssParser {
         case urlStringInvalid                               // 不是可用的URL網址
         case parsingFailed(_ response: HTTPURLResponse)     // RSS解析錯誤 (400)
     }
+    
+    /// XML類型
+    enum XMLType {
+        
+        case RSS    // RSS 2.0
+        case Atom   // Atom 1.0
+        
+        /// 由元素名稱找出XML類型
+        /// - Parameter elementName: String
+        /// - Returns: XMLType?
+        static func findElementType(_ elementName: String) -> XMLType? {
+            
+            switch elementName.lowercased() {
+            case "rss": return .RSS
+            case "feed": return .Atom
+            default: return nil
+            }
+        }
+    }
 }
 
 // MARK: - 常數

@@ -45,6 +45,7 @@ private extension ViewController {
                 let items = try await WWRssParser.shared.parse(url: url).get()
                 self.items = items
                 
+                if let xmlType = WWRssParser.shared.xmlType { print(xmlType) }
                 await MainActor.run { self.applySnapshot() }
                 
             } catch {

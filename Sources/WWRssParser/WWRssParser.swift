@@ -13,6 +13,10 @@ open class WWRssParser: NSObject {
     @MainActor
     public static let shared = WWRssParser()
     
+    public var xmlType: WWRssParser.XMLType? { rssParser.xmlType }
+    
+    private let rssParser = RssParser()
+    
     public struct RssItem: Codable, Identifiable {
         
         public let id = UUID()
@@ -49,6 +53,9 @@ open class WWRssParser: NSObject {
     
     // MARK: - RSS解析器
     class RssParser: NSObject {
+        
+        var xmlType: WWRssParser.XMLType? = nil
+        
         var currentElement: String = .init()
         var foundCharacters: String = .init()
         var items: [ParsedRssItem] = .init()
@@ -88,7 +95,7 @@ public extension WWRssParser {
     /// - Parameter data: Data
     /// - Returns: [RssItem]
     func parse(data: Data) -> [RssItem] {
-        let rssParser = RssParser()
+        rssParser.xmlType = nil
         return rssParser.parse(data: data)
     }
     

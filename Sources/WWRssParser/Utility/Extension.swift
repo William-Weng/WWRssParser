@@ -5,7 +5,21 @@
 //  Created by William.Weng on 2026/3/4.
 //
 
-import Foundation
+import UIKit
+
+// MARK: - String
+public extension String {
+    
+    /// 轉成對HTML支援
+    /// - Parameters:
+    ///   - encoding: 字元編碼
+    ///   - allowLossyConversion: Bool
+    /// - Returns: NSAttributedString?
+    func _html(using encoding: String.Encoding = .utf8, allowLossyConversion: Bool = false) -> NSAttributedString? {
+        guard let data = data(using: encoding, allowLossyConversion: allowLossyConversion) else { return nil }
+        return try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+    }
+}
 
 // MARK: - HTTPURLResponse
 extension HTTPURLResponse {

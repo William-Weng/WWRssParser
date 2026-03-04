@@ -61,7 +61,7 @@ private extension ViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "RSSItemCell", for: indexPath)
             
-            cell.textLabel?.text = rss.title
+            cell.textLabel?.attributedText = rss.title._html()
             cell.textLabel?.numberOfLines = 0
             
             return cell

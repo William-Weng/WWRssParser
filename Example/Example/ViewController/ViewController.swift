@@ -48,7 +48,7 @@ private extension ViewController {
                 case .Atom(let items): self.items = items
                 case .RSS(let items): self.items = items
                 }
-                                
+                
                 await MainActor.run { self.applySnapshot() }
                 
             } catch {

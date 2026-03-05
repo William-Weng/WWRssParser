@@ -12,9 +12,7 @@ open class WWRssParser: NSObject {
     
     @MainActor
     public static let shared = WWRssParser()
-    
-    var xmlType: WWRssParser.XMLType? { rssParser.xmlType }
-    
+        
     private let rssParser = RssParser()
     
     public struct RssItem: Codable, Identifiable {

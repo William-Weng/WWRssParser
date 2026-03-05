@@ -28,9 +28,7 @@ extension WWRssParser.RssParser {
 // MARK: - XMLParserDelegate
 extension WWRssParser.RssParser: XMLParserDelegate {
     
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        print(elementName)
-        
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {        
         if (xmlType == nil) { xmlType = WWRssParser.XMLType.findElementType(elementName) }
         parserDidStartDocument(parser, elementName: elementName)
     }

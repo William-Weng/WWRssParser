@@ -15,7 +15,7 @@
 		811E2AA22F57FC0F00C7E67A /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 811E2AA12F57FC0F00C7E67A /* WWRssParser */; };
 		8164A8B32F59702A0038B596 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8164A8B22F59702A0038B596 /* WWRssParser */; };
 		8164A8D62F5982D70038B596 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8164A8D52F5982D70038B596 /* WWRssParser */; };
-		8164A8D92F5983630038B596 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8164A8D82F5983630038B596 /* WWRssParser */; };
+		8164A8DC2F5986500038B596 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8164A8DB2F5986500038B596 /* WWRssParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,7 @@
 			files = (
 				811E2A902F57D42700C7E67A /* WWRssParser in Frameworks */,
 				811E2A792F57C31F00C7E67A /* WWRssParser in Frameworks */,
-				8164A8D92F5983630038B596 /* WWRssParser in Frameworks */,
+				8164A8DC2F5986500038B596 /* WWRssParser in Frameworks */,
 				81026E8B2F591AB40006C562 /* WWRssParser in Frameworks */,
 				811E2AA22F57FC0F00C7E67A /* WWRssParser in Frameworks */,
 				8164A8B32F59702A0038B596 /* WWRssParser in Frameworks */,
@@ -107,7 +107,7 @@
 				81026E8A2F591AB40006C562 /* WWRssParser */,
 				8164A8B22F59702A0038B596 /* WWRssParser */,
 				8164A8D52F5982D70038B596 /* WWRssParser */,
-				8164A8D82F5983630038B596 /* WWRssParser */,
+				8164A8DB2F5986500038B596 /* WWRssParser */,
 			);
 			productName = Example;
 			productReference = 817EE1FE2EB1FA050036B57C /* Example.app */;
@@ -138,7 +138,7 @@
 			mainGroup = 817EE1F52EB1FA050036B57C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				8164A8D72F5983630038B596 /* XCRemoteSwiftPackageReference "WWRssParser" */,
+				8164A8DA2F5986500038B596 /* XCLocalSwiftPackageReference "../../@WWRssParser" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 817EE1FF2EB1FA050036B57C /* Products */;
@@ -186,7 +186,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -219,7 +219,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,16 +381,12 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		8164A8D72F5983630038B596 /* XCRemoteSwiftPackageReference "WWRssParser" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/William-Weng/WWRssParser";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.1.2;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		8164A8DA2F5986500038B596 /* XCLocalSwiftPackageReference "../../@WWRssParser" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../@WWRssParser";
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		81026E8A2F591AB40006C562 /* WWRssParser */ = {
@@ -425,9 +421,8 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWRssParser;
 		};
-		8164A8D82F5983630038B596 /* WWRssParser */ = {
+		8164A8DB2F5986500038B596 /* WWRssParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8164A8D72F5983630038B596 /* XCRemoteSwiftPackageReference "WWRssParser" */;
 			productName = WWRssParser;
 		};
 /* End XCSwiftPackageProductDependency section */

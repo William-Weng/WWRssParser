@@ -17,7 +17,9 @@ extension WWRssParser.RssParser {
         
         let parser = XMLParser(data: data)
         
+        items.removeAll()
         xmlType = nil
+        
         parser.delegate = self
         parser.parse()
         

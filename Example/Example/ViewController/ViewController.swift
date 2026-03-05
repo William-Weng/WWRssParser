@@ -8,6 +8,9 @@
 import UIKit
 import WWRssParser
 
+import UIKit
+import WWRssParser
+
 final class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,7 +28,6 @@ final class ViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -34,10 +36,8 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - 小工具
 private extension ViewController {
     
-    /// 讀取線上的RSS文件
     func reloadData(url: String) {
         
         Task {
@@ -57,8 +57,6 @@ private extension ViewController {
         }
     }
     
-    /// 建立DataSource
-    /// - Returns: UITableViewDiffableDataSource<Int, WWRssParser.RssItem>
     func dataSourceMaker() -> UITableViewDiffableDataSource<Int, WWRssParser.RssItem> {
         
         let source = UITableViewDiffableDataSource<Int, WWRssParser.RssItem>(tableView: tableView) { tableView, indexPath, rss in
@@ -74,8 +72,6 @@ private extension ViewController {
         return source
     }
     
-    /// 畫面更新 => 資料快照
-    /// - Parameter animatingDifferences: Bool
     func applySnapshot(animatingDifferences: Bool = true) {
         
         let section: Int = 0
@@ -86,4 +82,3 @@ private extension ViewController {
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
-

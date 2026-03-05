@@ -12,10 +12,21 @@ public extension WWRssParser {
     
     /// 自定義錯誤
     enum CustomError: Error {
+        case dataInvalid                                    // 資料解析錯誤
         case responseInvalid                                // 不是回傳HTTP Response
         case urlStringInvalid                               // 不是可用的URL網址
         case parsingFailed(_ response: HTTPURLResponse)     // RSS解析錯誤 (400)
     }
+    
+    /// XML類型數值
+    enum XMLTypeValue {
+        case RSS(_ items: [RssItem])    // RSS 2.0
+        case Atom(_ items: [RssItem])   // Atom 1.0
+    }
+}
+
+// MARK: - 常數
+extension WWRssParser {
     
     /// XML類型
     enum XMLType {
@@ -35,10 +46,6 @@ public extension WWRssParser {
             }
         }
     }
-}
-
-// MARK: - 常數
-extension WWRssParser {
     
     /// RSS元件類型 => <item></item>
     enum ElementNameType: String, CaseIterable {

@@ -16,7 +16,8 @@ extension WWRssParser.RssParser {
     func parse(data: Data) -> [WWRssParser.RssItem] {
         
         let parser = XMLParser(data: data)
-                
+        
+        xmlType = nil
         parser.delegate = self
         parser.parse()
         
@@ -26,7 +27,7 @@ extension WWRssParser.RssParser {
 
 // MARK: - XMLParserDelegate
 extension WWRssParser.RssParser: XMLParserDelegate {
-        
+    
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         print(elementName)
         

@@ -13,7 +13,7 @@ open class WWRssParser: NSObject {
     @MainActor
     public static let shared = WWRssParser()
     
-    public var xmlType: WWRssParser.XMLType? { rssParser.xmlType }
+    var xmlType: WWRssParser.XMLType? { rssParser.xmlType }
     
     private let rssParser = RssParser()
     
@@ -93,21 +93,27 @@ public extension WWRssParser {
     
     /// 解析RSS資料
     /// - Parameter data: Data
-    /// - Returns: [RssItem]
-    func parse(data: Data) -> [RssItem] {
-        rssParser.xmlType = nil
-        return rssParser.parse(data: data)
+    /// - Returns: XMLTypeValue
+    func parse(data: Data) -> Result<XMLTypeValue, CustomError> {
+                
+        let items = rssParser.parse(data: data)
+        
+        switch rssParser.xmlType {
+        case .Atom: return .success(.Atom(items))
+        case .RSS: return .success(.RSS(items))
+        default: return .failure(CustomError.dataInvalid)
+        }
     }
     
     /// 解析線上RSS資料
     /// - Parameter url: RSS網址
-    /// - Returns: [RssItem]
-    func parse(url: String) async -> Result<[RssItem], Error> {
+    /// - Returns: Result<XMLTypeValue, Error>
+    func parse(url: String) async -> Result<XMLTypeValue, Error> {
         
         do {
             let data = try await fetch(url: url).get()
-            let items = parse(data: data)
-            return .success(items)
+            let xmlTypeValue = try parse(data: data).get()
+            return .success(xmlTypeValue)
         } catch {
             return .failure(error)
         }

@@ -42,10 +42,13 @@ private extension ViewController {
         
         Task {
             do {
-                let items = try await WWRssParser.shared.parse(url: url).get()
-                self.items = items
+                let xmlItems = try await WWRssParser.shared.parse(url: url).get()
                 
-                if let xmlType = WWRssParser.shared.xmlType { print(xmlType) }
+                switch xmlItems {
+                case .Atom(let items): self.items = items
+                case .RSS(let items): self.items = items
+                }
+                                
                 await MainActor.run { self.applySnapshot() }
                 
             } catch {

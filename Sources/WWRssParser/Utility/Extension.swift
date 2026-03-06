@@ -14,10 +14,30 @@ public extension String {
     /// - Parameters:
     ///   - encoding: 字元編碼
     ///   - allowLossyConversion: Bool
+    ///   - font: 字型
+    ///   - foregroundColor: 文字顏色
     /// - Returns: NSAttributedString?
-    func _html(using encoding: String.Encoding = .utf8, allowLossyConversion: Bool = false) -> NSAttributedString? {
-        guard let data = data(using: encoding, allowLossyConversion: allowLossyConversion) else { return nil }
-        return try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+    func _html(using encoding: String.Encoding = .utf8, allowLossyConversion: Bool = false, font: UIFont? = nil, foregroundColor: UIColor? = nil) -> NSMutableAttributedString? {
+        
+        guard let data = data(using: encoding, allowLossyConversion: allowLossyConversion),
+              let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+        else {
+            return nil
+        }
+        
+        let textRange = NSRange(location: 0, length: attributedString.length)
+        let mutableAttributedString = NSMutableAttributedString(attributedString: attributedString)
+        
+        if let font = font {
+            mutableAttributedString.addAttribute(.font, value: font, range: textRange)
+            mutableAttributedString.addAttribute(.underlineColor, value: UIColor.systemBlue, range: textRange)
+        }
+        
+        if let foregroundColor = foregroundColor {
+            mutableAttributedString.addAttribute(.foregroundColor, value: foregroundColor, range: textRange)
+        }
+        
+        return mutableAttributedString
     }
 }
 

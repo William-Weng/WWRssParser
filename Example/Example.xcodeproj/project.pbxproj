@@ -13,6 +13,7 @@
 		811E2A962F57DA4200C7E67A /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 811E2A952F57DA4200C7E67A /* WWRssParser */; };
 		811E2A9C2F57E39700C7E67A /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 811E2A9B2F57E39700C7E67A /* WWRssParser */; };
 		811E2AA22F57FC0F00C7E67A /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 811E2AA12F57FC0F00C7E67A /* WWRssParser */; };
+		81550B762F5A6D78006D7EC1 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 81550B752F5A6D78006D7EC1 /* WWRssParser */; };
 		8164A8B32F59702A0038B596 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8164A8B22F59702A0038B596 /* WWRssParser */; };
 		8164A8D62F5982D70038B596 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8164A8D52F5982D70038B596 /* WWRssParser */; };
 		8164A8DC2F5986500038B596 /* WWRssParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8164A8DB2F5986500038B596 /* WWRssParser */; };
@@ -50,6 +51,7 @@
 			files = (
 				811E2A902F57D42700C7E67A /* WWRssParser in Frameworks */,
 				811E2A792F57C31F00C7E67A /* WWRssParser in Frameworks */,
+				81550B762F5A6D78006D7EC1 /* WWRssParser in Frameworks */,
 				8164A8DC2F5986500038B596 /* WWRssParser in Frameworks */,
 				81026E8B2F591AB40006C562 /* WWRssParser in Frameworks */,
 				811E2AA22F57FC0F00C7E67A /* WWRssParser in Frameworks */,
@@ -108,6 +110,7 @@
 				8164A8B22F59702A0038B596 /* WWRssParser */,
 				8164A8D52F5982D70038B596 /* WWRssParser */,
 				8164A8DB2F5986500038B596 /* WWRssParser */,
+				81550B752F5A6D78006D7EC1 /* WWRssParser */,
 			);
 			productName = Example;
 			productReference = 817EE1FE2EB1FA050036B57C /* Example.app */;
@@ -138,7 +141,7 @@
 			mainGroup = 817EE1F52EB1FA050036B57C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				8164A8DA2F5986500038B596 /* XCLocalSwiftPackageReference "../../@WWRssParser" */,
+				81550B742F5A6D78006D7EC1 /* XCLocalSwiftPackageReference "../../@WWRssParser" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 817EE1FF2EB1FA050036B57C /* Products */;
@@ -382,7 +385,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		8164A8DA2F5986500038B596 /* XCLocalSwiftPackageReference "../../@WWRssParser" */ = {
+		81550B742F5A6D78006D7EC1 /* XCLocalSwiftPackageReference "../../@WWRssParser" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../@WWRssParser";
 		};
@@ -410,6 +413,10 @@
 			productName = WWRssParser;
 		};
 		811E2AA12F57FC0F00C7E67A /* WWRssParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WWRssParser;
+		};
+		81550B752F5A6D78006D7EC1 /* WWRssParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WWRssParser;
 		};
